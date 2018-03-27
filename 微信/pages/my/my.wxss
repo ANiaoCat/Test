@@ -1,0 +1,45 @@
+/* pages/my/my.wxss */
+@import "../my/commentCell.wxss";
+
+.scroll-top {
+  margin-top: 10px;
+  height: 80rpx;
+  width: 750rpx;
+  display: flex;
+  white-space: nowrap;
+  /*background-repeat: repeat;*/
+}
+
+.category {
+  margin: 10rpx;
+  width: 140rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  font: 12;
+}
+
+.orange {
+  color: lightskyblue;
+  background-color: orange;
+}
+
+.blue {
+  color: #fff;
+  background-color: lightskyblue;
+}
+
+.scroll-content {
+  height: 1060rpx;
+  width: 710rpx;
+  flex-direction: column;
+  display: flex;
+  background-color: white;
+  margin: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+  /*background-color: rebeccapurple;*/
+}

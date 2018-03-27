@@ -1,0 +1,121 @@
+<!--pages/food/orderList.wxml-->
+<view class="content">
+  <!--底部以上-->
+  <scroll-view class="top" scroll-y="true">
+    <!--第一块-->
+    <view class="order-detail">
+      <!--"订单详情"标题-->
+      <view class="title">
+        <image class="order_img" src="../resouce/order_detail.png">
+        </image>
+        <text>订单详情</text>
+      </view>
+      <!--订单内容-->
+      <view class="detail">
+        <!--分割线-->
+        <view class="cut-line line1"></view>
+        <!--菜品详情-->
+        <view class="food_list" wx:for="{{orderList}}" wx:for-item="orders">
+          <text class="name">{{orders.foodName}}</text>
+          <text class="nums">X{{orders.nums}}</text>
+          <text class="food-price">￥{{orders.price}}</text>
+        </view>
+        <!--分割线-->
+        <view class="cut-line line2"></view>
+        <!--价格-->
+        <view class="price">
+          <text class="price-nums">￥300.00</text>
+          <text class="price-name">原价：</text>
+        </view>
+        <view class="price">
+          <text class="price-nums">￥15.00</text>
+          <text class="price-name">优惠金额：</text>
+        </view>
+        <view class="price">
+          <text class="price-nums redColor">￥270.00</text>
+          <text class="price-name">实付金额：</text>
+        </view>
+      </view>
+    </view>
+    <!--第二块-->
+    <view class="order-note">
+      <!--就餐人数-->
+      <view class="note pepleNums">
+        <image class="note-img" src="../resouce/daocha.png"></image>
+        <text class="note-title">就餐人数</text>
+        <input class="note-input" placeholder="填写就餐人数" placeholder-class="placeholderStyle" type="number" />
+      </view>
+
+      <view class="cut-line"></view>
+      <!--备注-->
+      <view class="note remark">
+        <image class="note-img" src="../resouce/note.png"></image>
+        <text class="note-title">备\t注</text>
+        <input class="note-input" placeholder="口味偏好" placeholder-class="placeholderStyle" type="text" />
+      </view>
+    </view>
+    <!--第三块，第一期不加，暂时注释-->
+    <!--<view class="voucher">
+      <view class="voucher-name">
+        <view class="voucher-title">团购券:</view>
+        <view class="voucher-number">123123123123</view>
+      </view>
+      <view class="voucher-content">限时抢购88元抵100</view>
+    </view>-->
+    <!--留白-->
+    <view class="blank"></view>
+  </scroll-view>
+  <!--底部-->
+  <view class="pay">
+    <!--团购券第一期不要，暂时注释-->
+    <!--<view class="btn useVoucher" bindtap="payUseVoucher">使用团购券</view>-->
+    <view class="btn wPay" bindtap="wxPay">微信支付</view>
+  </view>
+</view>
+
+<!--mask弹框-->
+<view class="drawer_screen" bindtap="payUseVoucher" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <!--drawer content-->
+  <view class="drawer_title">选择优惠券</view>
+  <view class="viewSelectVoucher" bindtap="actionSheetChange">{{voucherType}} </view>
+
+  <!--输入优惠券列表-->
+  <view class="drawer_content">
+    <view class="cell grid">
+      <input class="input_base input_h30 col-1" placeholder="请输入团购券号" name="number1" type="number"></input>
+      <view class="cell-title col-0" bindtap="changeText1">修改</view>
+    </view>
+
+    <view class="cell grid">
+      <input class="input_base input_h30 col-1" placeholder="请输入团购券号" name="number2" type="number"></input>
+      <view class="cell-title col-0" bindtap="changeText2">修改</view>
+    </view>
+
+    <view class="cell grid">
+      <input class="input_base input_h30 col-1" placeholder="请输入团购券号" name="number3" type="number"></input>
+      <view class="cell-title col-0" bindtap="changeText3">修改</view>
+    </view>
+
+    <view class="cell grid">
+      <input class="input_base input_h30 col-1" placeholder="请输入团购券号" name="number4" type="number"></input>
+      <view class="cell-title col-0" bindtap="changeText4">修改</view>
+    </view>
+
+    <view class="cell grid">
+      <input class="input_base input_h30 col-1" placeholder="请输入团购券号" name="number5" type="number"></input>
+      <view class="cell-title col-0" bindtap="changeText5">修改</view>
+    </view>
+  </view>
+
+  <view class="btn_ok" bindtap="payUseVoucher" data-statu="close">确定</view>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for-items="{{actionSheetItems}}">
+    <action-sheet-item class="item" data-alpha-beta="{{index}}" bindtap="selectVoucher">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

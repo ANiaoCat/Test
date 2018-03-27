@@ -1,0 +1,41 @@
+.commentCell {
+  height: 100px;
+  width: 355px;
+  flex-direction: row;
+  display: flex;
+  background-color: seashell;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.cell-img {
+  width: 60px;
+  height: 60px;
+  margin-left: 12px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+
+.cell-text {
+  flex-direction: column;
+  display: flex;
+  /*width: 100px;*/
+  height: 60px;
+  margin-top: 20px;
+}
+
+.text {
+  font-size: 12px;
+  height: 30px;
+  margin-left: 20px;
+  /*margin-top: 10px;*/
+  line-height: 30px;
+}
+
+.name {
+  color: red;
+}
+
+.adress {
+  color: deepskyblue;
+}

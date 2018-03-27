@@ -1,0 +1,15 @@
+<!--pages/my/my.wxml-->
+<import src="../my/commentCell.wxml" />
+<scroll-view class="scroll-top" scroll-x="true">
+  <!--<block wx:for="{{titles}}" wx:for-item="log" wx:for-index="idx">
+    <view class="category {{currentIndex==idx?'blue':'orange'}}" bindtap="showHello" id="{{idx}}" >{{log}}</view>
+  </block>-->
+<view class="category {{currentIndex==idx?'blue':'orange'}}" bindtap="showHello" id="{{idx}}" wx:for="{{titles}}" wx:for-item="log" wx:for-index="idx"  >{{log}}</view>
+
+</scroll-view>
+
+<scroll-view class="scroll-content" scroll-y="true">
+  <!--<block wx:for="{{logs}}" wx:for-item="log">-->
+    <template is="commentCell" data="{{log}}" wx:for="{{logs}}" wx:for-item="log"/>
+  <!--</block>-->
+</scroll-view>

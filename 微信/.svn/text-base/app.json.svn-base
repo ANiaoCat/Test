@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/food/foodList",
+    "pages/food/orderList",
+    "pages/my/my",
+    "pages/my/mydetail",
+    "pages/food/paySucceed"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "BOSS APP",
+    "navigationBarTextStyle": "#fff"
+  }
+}

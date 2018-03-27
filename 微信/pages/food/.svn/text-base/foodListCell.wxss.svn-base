@@ -1,0 +1,62 @@
+.foodListCell {
+  width: 600rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10rpx;
+  background-color: white;
+  align-items: center;
+}
+
+.img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+}
+
+.cell {
+  /*align-items: center;
+   display: flex;*/
+  padding-left: 20rpx;
+  height: 180rpx;
+}
+
+.cell-title {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.cell-content {
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  /*align-items: stretch;*/
+  
+}
+
+.cell-text{
+  width: 220rpx;
+}
+
+.cell-number {
+  width: 180rpx;
+  /*height: 90rpx;*/
+  margin-right: 28rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.imgbtn{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.number{
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}

@@ -1,9 +1,0 @@
-<template name="commentCell">
-  <view class="commentCell" bindtap="goto">
-    <image class="cell-img" src="../resouce/ima.jpg"></image>
-    <view class="cell-text">
-      <text class="text name">{{log.name}}</text>
-      <text class="text adress">{{log.adress}}</text>
-    </view>
-  </view>
-</template>
